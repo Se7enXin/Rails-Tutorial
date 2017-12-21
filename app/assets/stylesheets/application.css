@@ -1,4 +1,9 @@
 /*
+ * Asset Pipeline 清单文件(manifest file) 
+ * 把静态资源文件放在适当的目录中之后，要通过清单文件（manifest file）告诉Rails
+   怎么把它们合并成一个文件（通过Sprockets gem实现，而且只合并CSS和JavaScript文件，
+   不会合并图像）。
+   
  * This is a manifest file that'll be compiled into application.css, which will include all the files
  * listed below.
  *
@@ -10,6 +15,8 @@
  * files in this directory. Styles in this file should be added after the last require_* statement.
  * It is generally better to create a new file per style scope.
  *
+ * 把app/assets/stylesheets 目录中的所有CSS文件（包含子目录中的文件）都引入应用的CSS文件
  *= require_tree .
+ * 把application.css 这个文件中的CSS也加载进来。
  *= require_self
  */
